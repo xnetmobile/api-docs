@@ -12,5 +12,5 @@ In case this documentation isn't enough, get in touch with our community through
 
 Some of the apps known to be using this API are listed below:
 
-[XNET Explorer](http://kuiper.syukuro.xnetmobile.com:8314)
+[XNET Explorer](https://explorer.xnetmobile.com)
 
