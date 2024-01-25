@@ -2,14 +2,14 @@
 
 This website is intended for people accessing the [XNET](about.md) API's and provides documentation and guidance on how to use it.
 
-All of the available API services are documented in the [API Spec](api-spec.md) page. To learn on how to access it, see below.
+All of the available API services are documented in the API Spec section. To learn on how to access it, see below.
 
 !!! Question ""
     XNET is pretty young, so at this stage you'll be experiencing the beginnings of the ecosystem. This means that the API is pretty basic at the moment, but we'll be expanding it further as we go. Feedback, ideas and suggestions are very welcome!
 
 ## API Access
 
-The XNET API is accessible through the **`https://services.xnetmobile.com`** endpoint. 
+The XNET API is accessible through the **`https://api.xnetmobile.com`** endpoint. 
 
 !!! Info ""
     The XNET API's access is restricted to registered users. In case you don't have access yet, make sure to request your API access through our [Discord server](https://discord.com/invite/3W5vTU8aCn).
@@ -48,8 +48,8 @@ fi
 
 # Fixed parameters
 
-AUTH_SERVICE=https://services.xnetmobile.com/v1/auth/token
-API_SERVICE="https://services.xnetmobile.com/v1/xsite/${XNODE_ID}"
+AUTH_SERVICE=https://api.xnetmobile.com/auth/token
+API_SERVICE="https://api.xnetmobile.com/xsite/${XNODE_ID}"
 SCOPE='xnet-external-api'
 GRANT_TYPE='client_credentials'
 
@@ -97,8 +97,8 @@ if (!clientSecret) {
 }
 
 // Fixed parameters
-const authService  = 'https://services.xnetmobile.com/v1/auth/token';
-const apiService   = 'https://services.xnetmobile.com/v1/xsite/';
+const authService  = 'https://api.xnetmobile.com/auth/token';
+const apiService   = 'https://api.xnetmobile.com/xsite/';
 const scope        = 'xnet-external-api';
 const grant_type   = 'client_credentials';
 
@@ -176,10 +176,10 @@ if not client_secret:
 
 # Fixed parameters
 
-auth_server = 'https://services.xnetmobile.com/v1/auth/token'
+auth_server = 'https://api.xnetmobile.com/auth/token'
 auth_scope = 'xnet-external-api'
 auth_grant_type = 'client_credentials'
-api_url = 'https://services.xnetmobile.com/v1/xsite/'
+api_url = 'https://api.xnetmobile.com/xsite/'
 
 # Some var initiatilization
 
@@ -244,7 +244,7 @@ import (
 )
 
   // Fixed parameters
-  const apiUrl = "https://services.xnetmobile.com/v1/xsite/"
+  const apiUrl = "https://api.xnetmobile.com/xsite/"
 
   // Var initialization
   var apiServiceUrl = ""
@@ -274,7 +274,7 @@ func main() {
     ClientID:     clientId,
     ClientSecret: clientSecret,
     Scopes:       []string{"xnet-external-api"},
-    TokenURL:     "https://services.xnetmobile.com/v1/auth/token",
+    TokenURL:     "https://api.xnetmobile.com/auth/token",
   }
 
   // Request access token from the XNET Authorization Server
@@ -327,9 +327,9 @@ The XNET API's are authenticated with OAuth 2.0 Authorization Framework  using t
 
 **(A)** The first one to get your access token. Step (A) from the diagram above.
 
-    Endoint:               https://services.xnetmobile.com
+    Endoint:               https://api.xnetmobile.com
     HTTP Method:           POST 
-    URI:                   /v1/auth/token
+    URI:                   /auth/token
     Content-Type:          application/x-www-form-urlencoded
     
     Request payload:
@@ -348,12 +348,12 @@ The XNET API's are authenticated with OAuth 2.0 Authorization Framework  using t
 
 **(C)** And then use the resulting **access_token** to request the service from the API.
 
-    Endoint:               https://services.xnetmobile.com
+    Endoint:               https://api.xnetmobile.com
     HTTP Method:           GET 
-    URI:                   /v1/xsite/some-xnode-id-1337
+    URI:                   /xsite/some-xnode-id-1337
     Authorization:         Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 
-**(D)** The API then responds according to the [API Spec](api-spec.md) for that request.
+**(D)** The API then responds according to the API Spec for that request.
 
 The API will only provide a successful response if the request is made with a valid access token.
 

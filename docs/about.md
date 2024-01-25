@@ -1,6 +1,6 @@
 # About XNET
 
-XNET is empowering the community to augment the 4G and 5G connectivity experience across the USA.
+XNET is empowering the community to augment the mobile connectivity across the USA, whether it is 4G/5G or Wifi.
 
 In order to learn more about XNET visit the [official website](https://xnet.company).
 
@@ -12,5 +12,5 @@ In case this documentation isn't enough, get in touch with our community through
 
 Some of the apps known to be using this API are listed below:
 
+[XNET Portal](https://www.xnetmobile.com)
 [XNET Explorer](https://explorer.xnetmobile.com)
-
