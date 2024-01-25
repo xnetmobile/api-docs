@@ -49,7 +49,7 @@ fi
 # Fixed parameters
 
 AUTH_SERVICE=https://api.xnetmobile.com/auth/token
-API_SERVICE="https://api.xnetmobile.com/xsite/${XNODE_ID}"
+API_SERVICE="https://api.xnetmobile.com/xsite/xnode/${XNODE_ID}"
 SCOPE='xnet-external-api'
 GRANT_TYPE='client_credentials'
 
@@ -129,7 +129,7 @@ async function getAccessToken() {
 
 // Request API Service using the access token
 async function getData(xnodeId) {
-  let apiServiceUrl=`${apiService}${xnodeId}`
+  let apiServiceUrl=`${apiService}xnode/${xnodeId}`
   if (expiresAt < Date.now()) {
     await getAccessToken();
   }
@@ -215,7 +215,7 @@ def get_data():
     if expires_at < int(time.time()):
         get_access_token()
     try:
-        api_service_url = api_url + xnode_id
+        api_service_url = api_url + "xnode/" + xnode_id
         response = requests.get(api_service_url, headers={
             "Authorization": f"Bearer {access_token}"
         })
@@ -284,7 +284,7 @@ func main() {
   }
 
   // Request API Service using the access token
-  apiServiceUrl = apiUrl + xnodeId
+  apiServiceUrl = apiUrl + "xnode/" + xnodeId
   client := conf.Client(ctx)
   resp, err := client.Get(apiServiceUrl)
   if err != nil {
@@ -350,7 +350,7 @@ The XNET API's are authenticated with OAuth 2.0 Authorization Framework  using t
 
     Endoint:               https://api.xnetmobile.com
     HTTP Method:           GET 
-    URI:                   /xsite/some-xnode-id-1337
+    URI:                   /xsite/xnode/some-xnode-id-1337
     Authorization:         Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 
 **(D)** The API then responds according to the API Spec for that request.
