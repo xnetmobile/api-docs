@@ -56,18 +56,23 @@ markdown_extensions:
   - admonition
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       use_pygments: true
   - pymdownx.superfences 
 
 nav:
-  - 'index.md'
-  - 'api-spec.md'
-  - 'about.md'
+  - Howto: index.md
+  - API Spec:
+    - Authorization: api-spec/auth.md
+    - Operator: api-spec/operator.md
+    - Site: api-spec/site.md
+    - XNODE: api-spec/xnode.md
+    - Radio: api-spec/radio.md
+  - About: about.md
 
 extra_css:
   - stylesheets/extra.css
 
-copyright: "Copyright © 2023 XNET Inc."
+copyright: "Copyright © 2024 XNET Inc."
